@@ -48,7 +48,7 @@
     <dependency>
       <groupId>av360</groupId>
       <artifactId>gfam</artifactId>
-      <version>1.8.0-rume</version>
+      <version>1.8.2-rume</version>
       <scope>compile</scope>
     </dependency>
     <dependency>
