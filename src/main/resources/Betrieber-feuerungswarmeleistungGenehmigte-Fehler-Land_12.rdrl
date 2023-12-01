@@ -10,5 +10,5 @@ rule "Betrieber-feuerungswarmeleistungGenehmigte-Fehler-Land_12"
 		RumeUploadDto( bericht != null , (bericht.feuerungswarmeleistungGenehmigte >= 25.0 || bericht.feuerungswarmeleistungGenehmigte == null) )
 		teilergebnis : KpTeilergebnisDto( )
 	then
-		teilergebnis.addRegelergebnisWarnung( "Feuerungswarmeleistung Genehmigte ist außerhalb der Grenzen", "drools.getRule().getName()", "Bericht ID" );
+		teilergebnis.addRegelergebnisFehler( "Feuerungswarmeleistung Genehmigte ist außerhalb der Grenzen", "drools.getRule().getName()", "Bericht ID" );
 end

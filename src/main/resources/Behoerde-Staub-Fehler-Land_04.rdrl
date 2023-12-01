@@ -10,5 +10,5 @@ rule "Behoerde-Staub-Fehler-Land_04"
 		RumeUploadDto( bericht != null , (bericht.staub >= 30.0 || bericht.staub == null) )
 		teilergebnis : KpTeilergebnisDto( )
 	then
-		teilergebnis.addRegelergebnisWarnung( "Staub ist außerhalb der Grenzen", "drools.getRule().getName()", "Bericht ID" );
+		teilergebnis.addRegelergebnisFehler( "Staub ist außerhalb der Grenzen", "drools.getRule().getName()", "Bericht ID" );
 end
