@@ -8,6 +8,7 @@ com.av360.gfam.application.dto.betriebsstunden
 com.av360.gfam.application.dto.adresse
 com.av360.gfam.application.dto.processing
 com.av360.gfam.application.dto.berichtdaten
+com.av360.gfam.domain.models.rume
 com.av360.gfam.application.dto.nutzwarme
 com.av360.gfam.application.dto
 com.av360.gfam.domain

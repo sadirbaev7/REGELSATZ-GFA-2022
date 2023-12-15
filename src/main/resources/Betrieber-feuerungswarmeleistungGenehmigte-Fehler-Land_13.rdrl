@@ -7,8 +7,8 @@ rule "Betrieber-feuerungswarmeleistungGenehmigte-Fehler-Land_13"
 	dialect "mvel"
 	agenda-group "KOMPLEXPRUEFUNG_13_BETRIEBER"
 	when
-		RumeUploadDto( bericht != null , (bericht.feuerungswarmeleistungGenehmigte >= 25.0 , bericht.feuerungswarmeleistungGenehmigte == null) )
+		RumeUploadDto( bericht != null , (bericht.feuerungswarmeleistungGenehmigte >= 25.0 || bericht.feuerungswarmeleistungGenehmigte == null) )
 		teilergebnis : KpTeilergebnisDto( )
 	then
-		teilergebnis.addRegelergebnisWarnung( "Feuerungswarmeleistung Genehmigte ist außerhalb der Grenzen", "drools.getRule().getName()", "Bericht ID" );
+		teilergebnis.addRegelergebnisFehler( "Feuerungswarmeleistung ist außerhalb der Grenzen", "Betrieber-feuerungswarmeleistungGenehmigte-Fehler-Land_13", "Feuerungswarmeleistung kann nicht genehmigt werden" );
 end

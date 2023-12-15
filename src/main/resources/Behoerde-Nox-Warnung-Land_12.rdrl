@@ -10,5 +10,5 @@ rule "Behoerde-Nox-Warnung-Land_12"
 		RumeUploadDto( bericht != null , bericht.nox > 20.0 , bericht.nox < 30.0 , bericht.nox != null )
 		teilergebnis : KpTeilergebnisDto( )
 	then
-		teilergebnis.addRegelergebnisWarnung( "Nox befindet sich im Grenzwert", "drools.getRule().getName()", "Bericht ID" );
+		teilergebnis.addRegelergebnisWarnung( "Nox liegt nahe an den Maximalwerten", "Behoerde-Nox-Warnung-Land_12", "Nox muss unter Kontrolle sein" );
 end

@@ -10,5 +10,5 @@ rule "Betrieber-Staub-Warnung-Land_09"
 		RumeUploadDto( bericht != null , bericht.staub > 30.0 , bericht.staub < 40.0 , bericht.staub != null )
 		teilergebnis : KpTeilergebnisDto( )
 	then
-		teilergebnis.addRegelergebnisWarnung( "Staub befindet sich im Grenzwert", "drools.getRule().getName()", "Bericht ID" );
+		teilergebnis.addRegelergebnisWarnung( "Staub liegt nahe an den Maximalwerten", "Betrieber-Staub-Warnung-Land_09", "Staub muss unter Kontrolle sein" );
 end

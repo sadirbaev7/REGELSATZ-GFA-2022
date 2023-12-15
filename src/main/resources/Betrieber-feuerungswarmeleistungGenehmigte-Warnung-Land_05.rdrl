@@ -5,10 +5,9 @@ import com.av360.gfam.presentation.model.rume.BerichtdatenRumeDto;
 
 rule "Betrieber-feuerungswarmeleistungGenehmigte-Warnung-Land_05"
 	dialect "mvel"
-	agenda-group "KOMPLEXPRUEFUNG_05_BETRIEBER
 	when
 		RumeUploadDto( bericht != null , bericht.feuerungswarmeleistungGenehmigte > 15.0 , bericht.feuerungswarmeleistungGenehmigte < 25.0 , bericht.feuerungswarmeleistungGenehmigte != null )
-		teilergebnis : KpTeilergebnisDto( )
+				teilergebnis : KpTeilergebnisDto( )
 	then
 		teilergebnis.addRegelergebnisWarnung( "Feuerungswarmeleistung Genehmigte befindet sich im Grenzwert", "drools.getRule().getName()", "Bericht ID" );
 end
