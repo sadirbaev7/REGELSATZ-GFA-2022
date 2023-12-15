@@ -10,5 +10,5 @@ rule "Behoerde-feuerungswarmeleistungGenehmigte-Warnung-Land_11"
 		RumeUploadDto( bericht != null , bericht.feuerungswarmeleistungGenehmigte > 15.0 , bericht.feuerungswarmeleistungGenehmigte < 25.0 , bericht.feuerungswarmeleistungGenehmigte != null )
 		teilergebnis : KpTeilergebnisDto( )
 	then
-		teilergebnis.addRegelergebnisWarnung( "Feuerungswarmeleistung Genehmigte befindet sich im Grenzwert", "drools.getRule().getName()", "Bericht ID" );
+		teilergebnis.addRegelergebnisWarnung( "Feuerungswarmeleistung liegt nahe an den Maximalwerten", "Behoerde-feuerungswarmeleistungGenehmigte-Warnung-Land_11", "Feuerungswarmeleistung muss unter Kontrolle sein" );
 end

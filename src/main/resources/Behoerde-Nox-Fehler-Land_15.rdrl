@@ -10,5 +10,5 @@ rule "Behoerde-Nox-Fehler-Land_15"
 		RumeUploadDto( bericht != null, (bericht.nox >= 30.0 || bericht.nox == null) )
 		teilergebnis : KpTeilergebnisDto( )
 	then
-		teilergebnis.addRegelergebnisWarnung( "Nox ist außerhalb der Grenzen", "drools.getRule().getName()", "Bericht ID" );
+		teilergebnis.addRegelergebnisFehler( "Nox ist außerhalb der Grenzen", "Behoerde-Nox-Fehler-Land_15", "Nox-Wert kann nicht genehmigt werden" );
 end
